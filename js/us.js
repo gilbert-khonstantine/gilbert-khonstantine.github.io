@@ -17,7 +17,7 @@ window.addEventListener("load", async (e) => {
     var returnedNews
     returnedNews = document.createElement('ul');
     returnedNews.innerHTML = `<div class="col-6 offset-3">
-    <h2 class="text-center">Top 10 Business News</h2>
+    <h2 class="text-center">Top US News</h2>
 </div>`
     json.articles.forEach(element => {
         returnedNews.innerHTML += `

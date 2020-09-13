@@ -1,7 +1,7 @@
 window.addEventListener("load", async (e) => {
     var searchResult = document.querySelector("#searchResult");
 
-    let response = await fetch(`https://gnews.io/api/v3/topics/science?token=cf902523c81401eec78c363210e7755c&max=100`);
+    let response = await fetch(`https://gnews.io/api/v3/topics/entertaiment?token=cf902523c81401eec78c363210e7755c&max=100`);
     console.log(response)
 
     if (response.ok) { // if HTTP-status is 200-299
@@ -17,7 +17,7 @@ window.addEventListener("load", async (e) => {
     var returnedNews
     returnedNews = document.createElement('ul');
     returnedNews.innerHTML = `<div class="col-6 offset-3">
-    <h2 class="text-center">Top Science News</h2>
+    <h2 class="text-center">Top Entertaiment News</h2>
 </div>`
     json.articles.forEach(element => {
         returnedNews.innerHTML += `
