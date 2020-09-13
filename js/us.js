@@ -1,10 +1,7 @@
-var queryBox = document.querySelector("#newsSearch");
-console.log(queryBox);
-
 window.addEventListener("load", async (e) => {
     var searchResult = document.querySelector("#searchResult");
 
-    let response = await fetch(`https://gnews.io/api/v3/top-news?token=cf902523c81401eec78c363210e7755c&max=100`);
+    let response = await fetch(`https://gnews.io/api/v3/topics/nation?token=cf902523c81401eec78c363210e7755c&max=100`);
     console.log(response)
 
     if (response.ok) { // if HTTP-status is 200-299
@@ -20,7 +17,7 @@ window.addEventListener("load", async (e) => {
     var returnedNews
     returnedNews = document.createElement('ul');
     returnedNews.innerHTML = `<div class="col-6 offset-3">
-    <h2 class="text-center">Top 100 News</h2>
+    <h2 class="text-center">Top 10 Business News</h2>
 </div>`
     json.articles.forEach(element => {
         returnedNews.innerHTML += `
@@ -36,6 +33,8 @@ window.addEventListener("load", async (e) => {
     });
     searchResult.appendChild(returnedNews);
 })
+
+var queryBox = document.querySelector("#newsSearch");
 
 queryBox.addEventListener("keypress", async (e) => {
     if (e.key == "Enter") {
@@ -74,3 +73,4 @@ queryBox.addEventListener("keypress", async (e) => {
         e.target.value = ""
     }
 })
+
